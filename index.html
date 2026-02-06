@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html></html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>💘 Question 💘</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+.buttons {
+  position: relative;
+  height: 150px;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* YES BUTTON */
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+/* NO BUTTON */
+#noBtn {
+  background: #ccc;
+  color: #333;
+  position: absolute;
+  left: 180px;
+  top: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Will you be my Valentine?</h2>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClicked()">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+</div>
+
+<script>
+let yesSize = 1;
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+function moveNo() {
+  const maxX = 200;
+  const maxY = 100;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  // grow YES button
+  yesSize += 0.15;
+  document.getElementById("yesBtn").style.transform =
+    `scale(${yesSize})`;
+}
+
+function yesClicked() {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff4d6d,#ff85a1);
+      font-family:Arial;
+      color:white;
+      text-align:center;
+    ">
+      <h1>papayag naman pala</h1>
+    </div>
+  `;
+}
+</script>
+
+</body>
+</html>
